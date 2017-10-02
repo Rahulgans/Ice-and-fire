@@ -1,3 +1,180 @@
 body{
-	padding-top:30px;
+	padding-top:70px;
+	font-family: 'Slabo 27px', serif;
+}
+
+.intro-column{
+
+	padding-top: 30px;
+    padding-bottom: 30px;
+  /*  background-color:#acc484;   */
+    box-shadow: 2px 1px 4px grey;
+}
+
+.btn-danger{
+	margin-top: 10px;
+}
+
+.intro-image{
+	background-image: url("images/got.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+	height: 200px;
+	opacity: 0.9;
+
+}
+
+.intro-text{
+
+	margin-top: 200px;
+/*	border: 1px solid white; */
+	background-color: #181818;
+	color: bisque;
+/*	border-radius: 5px; */
+
+	}
+
+.main-image{
+
+	width: 40px;
+	height: 40px;
+	margin: 0px auto;
+}
+
+@media screen and (min-width: 480px){
+
+	.main-image{
+
+		width: 100px;
+		height: 100px;
+	}
+}
+
+
+.main-row{
+	margin: 50px 0px;
+}
+
+.books{
+
+	margin-top: 5%;
+	color: #060301;
+	background: linear-gradient(to bottom,#6B4842,#DBC796);
+	 box-shadow: 1px 1px 5px grey; 
+	 height: 200px;
+	}
+	
+
+.know-btn{
+
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+}
+.btn-custom{
+	display: block;
+	padding: 2px 14px;
+	border-radius: 5px; 
+	margin: 5px auto;
+	color: #e4d6d6;
+	background-color: #260A05;
+}
+
+@media screen and (max-width: 480px){
+	.btn-custom{
+	padding: 2px 8px;
+	}
+
+}
+
+.type-image{
+	
+	width: 80px;
+	height: 80px;
+	margin: 5px auto;
+	
+	}
+.characters{
+	
+	margin-top: 5%;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	background: linear-gradient(rgba(19, 20, 22, 0.8),rgba(9, 6, 6, 0.8));
+	color: ghostwhite;
+	box-shadow: 1px 1px 5px grey; 
+	height: 18em;
+	
+}
+
+
+.houses{
+	
+	margin-top: 5%;
+	box-shadow: 1px 1px 5px grey; 
+	/* background: linear-gradient(rgba(249, 244, 244, 0.6),rgba(225, 183, 159, 0.8)); */
+	background:linear-gradient(to right,#FFCE54,#ED5564);
+	height: 230px;
+	color: #060606;
+	
+}
+
+.toggle-entry{
+	
+	display: flex;
+	justify-content: space-around;
+	margin-top: 40px;
+}
+
+
+.book-jumbo{
+
+	background-image: url("images/book1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.char-jumbo{
+
+	background-image: linear-gradient(rgba(7, 7, 5, 0.8),rgba(77, 81, 10, 0.6)),url("images/char.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	min-height: 200px; 
+}
+
+.house-jumbo{
+
+	background-image: linear-gradient(rgba(255,255,255,0.3),rgba(11, 11, 11, 0.6)),url("images/1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.bg{
+	margin-top: 20px; 
+	
+}
+
+.book-content{
+
+	margin-top: 10px; 
+}
+@media screen and(min-width: 768px){
+	.characters{
+	
+	margin-top: 10%;
+}
+
+	.houses{
+	margin-top: 10%;
+	
+	}
+
+	.type-image{
+	
+	width: 120px;
+	height: 120px;
+}
 }

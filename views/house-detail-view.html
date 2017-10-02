@@ -1,0 +1,19 @@
+			
+
+		<div class="jumbotron bg">
+	 		<div class="container-fluid">
+				<div class="row" ng-repeat = "data in houseCtrl.houseData">
+				<div class="col-xs-12 text-center house-jumbo">
+				<div>
+				<h3> {{ data.name }}</h3>
+                <h5>Region : {{ data.region }}</h5>
+                </div>
+                </div>
+                </div>
+                <div class="toggle-entry">
+               
+                 <a class="btn btn-default btn-custom" ng-href="#toHouse" style="display: inline-block;">Back</a> 
+                  <a ng-href="#/" class="btn btn-default btn-custom" style="display: inline-block;">Home</a>
+			</div>
+		</div>
+	</div>

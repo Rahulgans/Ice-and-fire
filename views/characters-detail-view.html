@@ -1,0 +1,30 @@
+	
+
+	<div class="jumbotron bg char-jumbo">
+	<div style="color:  #fbf7f2;">
+	 <div class="container-fluid">
+		<div class="row" ng-repeat="data in charCtrl.charData">
+			<div class="col-xs-12 text-center">
+			
+				<h2 ng-if ='data.name != "" '> Name:<b>{{ data.name }}</b></h4>
+                <h3 ng-if ='data.aliases[0] != "" '>Known as : <b>"{{ data.aliases[0] }}"</b></h3>
+                <h3 ng-if ='data.gender != "" '>Gender : <b>{{ data.gender }}</b></h3> 
+                <h3 ng-if ='data.born != "" '> Born : <b>{{ data.born }}</b></h3> 
+                <h3 ng-if ='data.culture != "" '>Culture : <b>{{ data.culture }}</b></h3> 
+                <h3 ng-if ='data.died != "" '>Died : {{ data.died }}</h3> 
+                <h3 ng-if = 'data.father != "" '>Father : <a ng-href ='#/characters/{{ data.father.split("/").pop() }}'>{{ data.father }}</a></h3>
+                <h3 ng-if = 'data.mother != "" '>Mother : <a ng-href ='#/characters/{{ data.mother.split("/").pop() }}'>{{ data.mother }}</a></h3>
+                <h3 ng-if = 'data.spouse != "" '>Spouse : <a ng-href ='#/characters/{{ data.spouse.split("/").pop() }}'>{{ data.spouse}}</a></h3>
+               
+				</div>
+			</div>
+
+               <div class="toggle-entry">
+               <button class="btn btn-default btn-custom" ng-click="goBack()" style="display: inline-block;">Back</button> 
+                <a ng-href="#/" class="btn btn-default btn-custom" style="display: inline-block;">Home</a>
+                 
+			</div>
+			
+		</div>
+		</div>
+		</div>

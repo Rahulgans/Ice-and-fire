@@ -1,0 +1,33 @@
+          
+
+          
+            
+
+          <div class="container-fluid  main-row">
+          <div class="row">
+              <div class="col-xs-3 text-center">
+              <span><i><img src="images/book.png" class="img-responsive main-image"></i></span>
+                  <a class="btn btn-danger"  ng-click="mainCtrl.booksShowHide()">Books</a>
+              </div>
+          
+              <div class="col-xs-4 col-xs-offset-1 text-center">
+              <span><i><img src="images/sword.png" class="img-responsive main-image"></i></span>
+                  <button class="btn btn-danger" ng-click="mainCtrl.charsShowHide()">Characters</button>
+              </div>
+              <div class="col-xs-3 col-xs-offset-1 text-center">
+                <span><i><img src="images/castle.png" class="img-responsive main-image"></i></span>  
+                <a class="btn btn-danger" ng-click="mainCtrl.housesShowHide()">Houses</a>
+              </div>
+            </div>
+            </div>
+
+            <div class="container-fluid"  ng-repeat="item in mainCtrl.allData">
+              
+               <books-dir></books-dir> 
+
+               <characters-dir></characters-dir>
+
+               <houses-dir></houses-dir>
+              
+              <!-- ng-if ="mainCtrl.value2" -->
+              </div>

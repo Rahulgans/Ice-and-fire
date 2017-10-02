@@ -1,0 +1,30 @@
+		
+
+
+	<div class="jumbotron bg book-jumbo">
+	 <div class="container-fluid">
+		<div class="row" ng-repeat="data in bookCtrl.bookData">
+		 <div class="col-xs-12">
+			<h2 class="text-center"><span><i class="fa fa-star"></i></span> {{ data.name }} <span><i class="fa fa-star"></i></span> </h2>
+		</div>
+			<div class="col-xs-12 col-md-6 text-center book-content">
+				<h5><b>Author</b> : {{ bookCtrl.author }}</h5>
+				<h5><b>Country</b> : {{ data.country }}</h5>
+				<h5><b>Pages</b> : {{ data.numberOfPages }}</h5>
+				<h5><b>Publisher</b> : {{ data.publisher }}</h5>
+				<h5><b>Released on</b> : {{ data.released | date:medium }}</h5>
+			</div>
+			<div class="col-xs-12 col-md-5 col-md-offset-1 text-center book-content" ng-if = 'data.povCharacters.length >= 1'>
+				<h4>Main Characters</h4>
+				<hr style="width: 50%; border-top: 1px solid #0c0909; margin-top: 5px;"></hr>
+				<div ng-repeat ="pov in data.povCharacters">
+				 <h5><a ng-href ='#/characters/{{ pov.split("/").pop() }}'>{{ pov }}</a></h5>
+				</div> 
+				</div>  <!--  povcharacters div ends -->
+			</div>  <!--  row ends -->
+		</div>	
+				 <div class="toggle-entry">
+                 <a class="btn btn-default btn-custom" ng-href="#toBook" style="display: inline-block;">Back</a> 
+                  <a ng-href="#/" class="btn btn-default btn-custom" style="display: inline-block;">Home</a>	
+			</div> <!-- toggle-entry ends -->
+		</div>  <!-- jumbotron ends  -->
