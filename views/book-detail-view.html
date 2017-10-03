@@ -1,9 +1,9 @@
 		
 
 
-	<div class="jumbotron bg book-jumbo">
+	<div class="jumbotron bg">
 	 <div class="container-fluid">
-		<div class="row" ng-repeat="data in bookCtrl.bookData">
+		<div class="row book-jumbo" ng-repeat="data in bookCtrl.bookData">
 		 <div class="col-xs-12 text-center">
 			<h2>
 			<span style="margin:0px 5px;"><i class="fa fa-star"></i></span>{{ data.name }}<span style="margin:0px 5px;"><i class="fa fa-star"></i></span>
@@ -22,11 +22,12 @@
 				<div ng-repeat ="pov in data.povCharacters">
 				 <h5><a ng-href ='#/characters/{{ pov.split("/").pop() }}'>{{ pov }}</a></h5>
 				</div> 
-				</div>  <!--  povcharacters div ends -->
-			</div>  <!--  row ends -->
-		</div>	
-				 <div class="toggle-entry">
+				</div>  <!--  MainCharacters div ends -->
+				<div class="col-xs-12 toggle-entry">
                  <a class="btn btn-default btn-custom" ng-href="#toBook" style="display: inline-block;">Back</a> 
                   <a ng-href="#/" class="btn btn-default btn-custom" style="display: inline-block;">Home</a>	
 			</div> <!-- toggle-entry ends -->
+			</div>  <!--  row ends -->
+		</div>	
+				 
 		</div>  <!-- jumbotron ends  -->
