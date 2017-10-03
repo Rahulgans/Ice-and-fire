@@ -1,20 +1,23 @@
 	
 
 	<div class="jumbotron bg char-jumbo">
-	<div style="color:  #fbf7f2;">
+	<div style="color: navajowhite;">
 	 <div class="container-fluid">
 		<div class="row" ng-repeat="data in charCtrl.charData">
 			<div class="col-xs-12 text-center">
 			
-				<h2 ng-if ='data.name != "" '> Name:<b>{{ data.name }}</b></h4>
+				<h2 ng-if ='data.name != ""'><span style="margin:0px 5px;"><i class="fa fa-star"></i></span> {{ data.name }} <span style="margin:0px 5px;"><i class="fa fa-star"></i></span> </h2>
                 <h3 ng-if ='data.aliases[0] != "" '>Known as : <b>"{{ data.aliases[0] }}"</b></h3>
                 <h3 ng-if ='data.gender != "" '>Gender : <b>{{ data.gender }}</b></h3> 
                 <h3 ng-if ='data.born != "" '> Born : <b>{{ data.born }}</b></h3> 
                 <h3 ng-if ='data.culture != "" '>Culture : <b>{{ data.culture }}</b></h3> 
                 <h3 ng-if ='data.died != "" '>Died : {{ data.died }}</h3> 
-                <h3 ng-if = 'data.father != "" '>Father : <a ng-href ='#/characters/{{ data.father.split("/").pop() }}'>{{ data.father }}</a></h3>
-                <h3 ng-if = 'data.mother != "" '>Mother : <a ng-href ='#/characters/{{ data.mother.split("/").pop() }}'>{{ data.mother }}</a></h3>
-                <h3 ng-if = 'data.spouse != "" '>Spouse : <a ng-href ='#/characters/{{ data.spouse.split("/").pop() }}'>{{ data.spouse}}</a></h3>
+                <h3 ng-if = 'data.father != "" '>Father : <a ng-href ='#/characters/{{ data.father.split("/").pop() }}' style="color: #81d0e7;">{{ data.father }}</a></h3>
+                <h3 ng-if = 'data.mother != "" '>Mother : <a ng-href ='#/characters/{{ data.mother.split("/").pop() }}' style="color: #81d0e7;">{{ data.mother }}</a></h3>
+                <h3 ng-if = 'data.spouse != "" '>Spouse : <a ng-href ='#/characters/{{ data.spouse.split("/").pop() }}' style="color: #81d0e7;">{{ data.spouse}}</a></h3>
+                <h3 ng-if = 'data.playedBy[0] != "" '>Played by : "{{ data.playedBy[0]}}"</h3>
+                <h3 ng-if = 'data.titles[0] != "" '>Title : "{{ data.titles[0]}}"</h3>
+                <h3 ng-if = 'data.tvSeries[0] !=""'>Appeared in : "{{ charCtrl.seasons }}"</h3>
                
 				</div>
 			</div>

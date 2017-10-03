@@ -3,17 +3,37 @@
 		<div class="jumbotron bg">
 	 		<div class="container-fluid">
 				<div class="row" ng-repeat = "data in houseCtrl.houseData">
+					
+				
 				<div class="col-xs-12 text-center house-jumbo">
-				<div>
-				<h3> {{ data.name }}</h3>
-                <h5>Region : {{ data.region }}</h5>
+				<div style="color: ghostwhite;">
+				<h3 ng-if ='data.name != ""'>
+				<span style="margin:0px 5px;"><i class="fa fa-star"></i></span> {{ data.name }} <span style="margin:0px 5px;"><i class="fa fa-star"></i></span>
+				</h3>
+                <h4 ng-if='data.region != ""'>Region : <b>{{ data.region }}</b></h4>
+                <h4 ng-if='data.founded != ""'>Founded : <b>{{ data.founded }}</b></h4>
+                
+                <h4 ng-if='data.heir != ""'>Heir : <a ng-href='#/characters/{{ data.heir.split("/").pop() }}' style="color: #6aa2d2;">{{ data.heir }}</a></h4>
+                <h4 ng-if='data.currentLord != ""'>Current Lord : <a ng-href='#/characters/{{ data.currentLord.split("/").pop() }}' style="color: #6aa2d2;">{{ data.currentLord }}</a></h4>
+                <h4 ng-if='data.overlord != ""'>Overlord : <a ng-href='#/houses/{{ data.overlord.split("/").pop() }}' style="color: #6aa2d2;">{{ data.overlord }}</a></h4>
+                <p ng-if='data.coatOfArms != ""'>Coat Of Arms : "{{ data.coatOfArms }}"</p>
                 </div>
-                </div>
-                </div>
+                <div ng-if = 'data.swornMembers.length >= 1' style="color: ghostwhite;">
+                <h3>Sworn Members</h3>
+				<hr style="width: 50%; border-top: 1px solid white; margin-top: 5px;"></hr>
+
+				<div ng-repeat ="sworn in data.swornMembers">
+				 <h5><a ng-href ='#/characters/{{ sworn.split("/").pop() }}'>{{ sworn }}</a></h5>
+				</div> 
+
+				</div>  <!--  sworn members div ends -->
+				</div>
+				</div>	<!-- Row ends -->
+
                 <div class="toggle-entry">
-               
                  <a class="btn btn-default btn-custom" ng-href="#toHouse" style="display: inline-block;">Back</a> 
-                  <a ng-href="#/" class="btn btn-default btn-custom" style="display: inline-block;">Home</a>
-			</div>
+                 <a ng-href="#/" class="btn btn-default btn-custom" style="display: inline-block;">Home</a>
+                </div>
+                </div> <!-- Container Ends -->
+                
 		</div>
-	</div>

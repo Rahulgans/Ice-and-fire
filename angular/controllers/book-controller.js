@@ -7,7 +7,7 @@ myApp.controller("BookDetailsController",["$http","ThroneService","$routeParams"
 	this.bookId = $routeParams.id1;
 
 	this.bookData = [];
-	
+	this.author;
 
 	this.charactersPov=[];
 
@@ -27,13 +27,7 @@ myApp.controller("BookDetailsController",["$http","ThroneService","$routeParams"
 				this.people.push(response.data.authors[i]);
 				//console.log(main.people);
 				}
-		main.author = this.people.toString();   
-
-		for(var i in response.data.povCharacters){
-				this.characters.push(response.data.povCharacters[i]);
-				//console.log(main.people);
-				}
-		main.charactersPov = this.characters.toString();
+		main.author = this.people.toString(); 
 
 
 		},function errorCallback(reason){

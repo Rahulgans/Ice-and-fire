@@ -4,8 +4,10 @@
 	<div class="jumbotron bg book-jumbo">
 	 <div class="container-fluid">
 		<div class="row" ng-repeat="data in bookCtrl.bookData">
-		 <div class="col-xs-12">
-			<h2 class="text-center"><span><i class="fa fa-star"></i></span> {{ data.name }} <span><i class="fa fa-star"></i></span> </h2>
+		 <div class="col-xs-12 text-center">
+			<h2>
+			<span style="margin:0px 5px;"><i class="fa fa-star"></i></span>{{ data.name }}<span style="margin:0px 5px;"><i class="fa fa-star"></i></span>
+			</h2>
 		</div>
 			<div class="col-xs-12 col-md-6 text-center book-content">
 				<h5><b>Author</b> : {{ bookCtrl.author }}</h5>

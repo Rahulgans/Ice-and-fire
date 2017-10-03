@@ -12,6 +12,7 @@ myApp.controller("HouseDetailsController",["$http","ThroneService","$routeParams
 
 		ThroneService.housesDetailsApi(main.houseId)
 		.then(function successCallback(response){
+		
 		//	console.log(response.data);
 
 			main.houseData.push(response.data);

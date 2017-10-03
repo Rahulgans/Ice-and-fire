@@ -22,7 +22,7 @@ myApp.controller("MainController",["$http","ThroneService",function($http,Throne
 
 		ThroneService.booksApi(12)
 		.then(function successCallback(response){
-		 console.log(response.data);
+	//	 console.log(response.data);
 			
 		main.data1["books"] = response.data ;
 	//	main.allData.push(main.data1["books"]);
