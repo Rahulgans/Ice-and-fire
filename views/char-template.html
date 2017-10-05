@@ -2,9 +2,13 @@
               
              
                
-           <div class="row"> 
+   <div class="row type-rows" id="char1"> 
+ <!--  <div class="col-xs-12 col-md-9 col-md-offset-1 text-center">
+          <h1 class="type-heading">CHARACTERS</h1>
+          </div>  -->
+     
              
-            <div class="col-xs-12 col-md-4 col-md-offset-1 text-center characters" ng-init="" ng-repeat = "char in item.chars">
+     <div class="col-xs-12 col-md-4 col-md-offset-1 text-center characters" ng-repeat ="char in item.chars| orderBy:['!name', 'name']:mainCtrl.key1 | filter : searchName2">
                
                 <img src="images/helmet1.png" class="img-responsive type-image">
                 <h5 ng-if = 'char.name !=""'>Name : {{ char.name }}</h5>
@@ -26,6 +30,7 @@
 					         </h3></span>
                 	<article><span><strong>Khaleesi</strong></span> is actually a title: It's the Dothraki version of queen, but fans have embraced it as a name for their baby girls. According to a Social Security Administration list of baby names in 2014, Khaleesi was the 755th most popular baby name for girls. In 2013, it was the 1,021st most popular baby. So, it's only getting more popular over time.</article>
                 	</div>
+                     <hr style="border-top: 2px solid #e8dfdf;">
                 </div>
                
           

@@ -12,7 +12,15 @@ myApp.controller("BookDetailsController",["$http","ThroneService","$routeParams"
 	this.charactersPov=[];
 
 
+
 	this.booksDetails = function(){
+
+		ThroneService.toHouseBtn = "";
+		ThroneService.toBookBtn = "book1";
+		ThroneService.toCharBtn = "";
+
+
+		console.log(ThroneService.toBookBtn);
 	
 	ThroneService.booksDetailsApi(main.bookId)
 	.then(function successCallback(response){
@@ -28,6 +36,8 @@ myApp.controller("BookDetailsController",["$http","ThroneService","$routeParams"
 				//console.log(main.people);
 				}
 		main.author = this.people.toString(); 
+
+
 
 
 		},function errorCallback(reason){

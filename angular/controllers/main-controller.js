@@ -1,5 +1,5 @@
 
-myApp.controller("MainController",["$http","ThroneService",function($http,ThroneService){
+myApp.controller("MainController",["$http","ThroneService","$timeout",function($http,ThroneService,$timeout){
 
 	var main = this;
 	this.baseUrl ="https://anapioficeandfire.com/api";
@@ -15,7 +15,9 @@ myApp.controller("MainController",["$http","ThroneService",function($http,Throne
 	this.check1 = 1 ;
 	this.check2 = 1;
 
-	this.idHouse = "house";
+	this.key1 = false;
+/*	this.key2 = false;
+	this.key3 = false;  */
 
 
 	this.loadBooks = function(){
@@ -25,7 +27,18 @@ myApp.controller("MainController",["$http","ThroneService",function($http,Throne
 	//	 console.log(response.data);
 			
 		main.data1["books"] = response.data ;
-	//	main.allData.push(main.data1["books"]);
+		
+		$timeout(function(){
+
+			if(ThroneService.toBookBtn == "book1"){
+				console.log(ThroneService.toBookBtn);
+				var element = document.getElementById(ThroneService.toBookBtn)
+				var scrollDist = element.getBoundingClientRect();
+				console.log(scrollDist.top);
+     			 window.scrollTo(0,scrollDist.top);
+
+			}
+		},0);
 		
 	},function errorCallback(reason){
 		alert("Error in GET");
@@ -49,16 +62,27 @@ this.loadChar = function(){
 	
 		ThroneService.characters_houses_Api("characters",1)
 		.then(function successCallback(response){
-		//console.log(response.data);
+		console.log(response.data);
 
 		main.data1["chars"] = response.data; ;
-	// console.log(main.data1["chars"]);
-			
+		
+		$timeout(function(){
+
+			if(ThroneService.toCharBtn == "char1"){
+				console.log(ThroneService.toCharBtn);
+				var element = document.getElementById("char1")
+				var scrollDist = element.getBoundingClientRect();
+				console.log(scrollDist.top);
+     		 window.scrollTo(0, scrollDist.top);
+
+			}
+		},0);
 		
 	},function errorCallback(reason){
 		alert("Error in GET");
 	})
-	
+		
+
 };
 
  this.loadChar();
@@ -179,6 +203,19 @@ this.loadHouses = function(){
 		main.allData.push(main.data1);
 
 		// console.log(main.data1);
+
+		$timeout(function(){
+			
+
+			if(ThroneService.toHouseBtn == "house1"){
+				console.log(ThroneService.toHouseBtn);
+				var element = document.getElementById(ThroneService.toHouseBtn)
+				var scrollDist = element.getBoundingClientRect();
+				console.log(scrollDist.top);
+     		 window.scrollTo(0, scrollDist.top);
+
+			}
+		},0);
 		
 	},function errorCallback(reason){
 		alert("Error in GET");
@@ -196,4 +233,5 @@ this.loadHouses = function(){
 
 //console.log(this.allData);
 
+		
 }])

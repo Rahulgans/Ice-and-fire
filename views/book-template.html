@@ -1,10 +1,33 @@
 			
 				
-			<div class="row">
+		<div class="row type-rows" id="book1">
+  <!--    <div class="col-xs-12 col-md-9 col-md-offset-1 text-center">
+          <h1 class="type-heading">BOOKS</h1>
+      </div>  -
+        <div class="col-xs-12 text-center filter-btns">
+          <div class="row">
+            <div class="col-md-4">
+            <button class="btn btn-danger" type="button" ng-click="mainCtrl.key1 =! mainCtrl.key1">Sort by Name<span ng-show="mainCtrl.key1" style="margin-left: 5px;"><i class="fa fa-caret-down"></i></span>
+            <span ng-show="!mainCtrl.key1" style="margin-left: 5px;"><i class="fa fa-caret-up"></i></span>
+            </button>
+            </div>
+            <div class="col-md-4">
+            <div class="input-group filt-book" style="margin:10px 0px;">
+            <span class="input-group-addon">Book
+            <span class="glyphicon glyphicon-book" style="color: brown;"></span>
+            </span>
+            <input  type="text" name="book" class="form-control" placeholder="Book name here.." ng-model="searchName1.name">
+            </div>
+            </div>
+            <div class="col-md-4">
+            <button class="btn btn-danger" type="button" ng-click="">Sort by Pages</button>
+            </div>
+         </div>
+        </div>   -->
 
-				<div class="col-xs-12 col-md-4 col-md-offset-1 books text-center" ng-repeat = "book in item.books">
+				<div class="col-xs-12 col-md-4 col-md-offset-1 books text-center" ng-repeat = "book in item.books | orderBy: mainCtrl.key1? '-name':'name' | filter: searchName1">
 			
-      	  <h3 class="text-center">{{ $index + 1 }} . {{ book.name }}</h3>
+      	  <h3 class="text-center" style="margin-top:40px;">{{ $index + 1 }} . {{ book.name }}</h3>
       
             <h5 class="text-center">ISBN : {{ book.isbn }}</h5>
       
@@ -21,6 +44,8 @@
                 	<span><h3> Did you know<i class="fa fa-question-circle fa-2x text-danger" style="margin-left: 10px;" aria-hidden="true"></i>
 			         		</h3></span>
                 	<p> Author George R.R. Martin made a bet with his friend Patrick St. Denis that if the Dallas Cowboys ever had a better season than the New York Giants, he'd make St. Denis into a character and have him brutally ripped apart by giants. After losing the bet, Martin kept to his word and in "A Dance with Dragons" there's a character named Sir Patrek of King's Mountain who's killed by giants. Martin even made the character's heraldry looks like the Dallas Cowboy's logo.</p>
+
               	 </div>
+                 <hr style="border-top: 2px solid #e8dfdf;">
                 </div>
              </div>

@@ -11,6 +11,12 @@ myApp.controller("CharDetailsController",["$http","ThroneService","$routeParams"
 
 	this.charactersDetails = function(){
 
+		ThroneService.toHouseBtn = "";
+		ThroneService.toBookBtn = "";
+		ThroneService.toCharBtn = "char1";
+
+		console.log(ThroneService.toCharBtn);
+
 		ThroneService.charactersDetailsApi(main.charId)
 		.then(function successCallback(response){
 		

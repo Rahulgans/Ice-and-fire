@@ -1,6 +1,7 @@
 body{
-	padding-top:70px;
+	padding-top:50px;
 	font-family: 'Slabo 27px', serif;
+	background-color: #d7d5d2;
 }
 
 .intro-column{
@@ -51,20 +52,33 @@ body{
 	}
 }
 
+.type-rows {
+	margin-top:30px;
+}
 
-.main-row{
-	margin: 50px 0px;
+.type-heading{
+
+	background: linear-gradient(#F0F2B2,#B9F2B7); 
+	 /*  background: linear-gradient(#EDF3F3,#84CE8D);   Green */
+	padding: 10px;
+	border: 10px solid #cecbcb;
+	border-radius: 20px;
+	
 }
 
 .books{
 
 	margin-top: 5%;
 	color: #060301;
-	background: linear-gradient(to bottom,#6B4842,#DBC796);
+	background: linear-gradient(to bottom,#F4E9E7,#DBC796);
 	 box-shadow: 1px 1px 5px grey; 
 	 height: 200px;
 	}
 	
+	.filter-btns{
+		margin-top: 20px;
+		
+	}
 
 .know-btn{
 
@@ -93,7 +107,7 @@ body{
 	
 	width: 80px;
 	height: 80px;
-	margin: 5px auto;
+	margin: 20px auto;
 	
 	}
 .characters{
@@ -113,9 +127,13 @@ body{
 	
 	margin-top: 5%;
 	box-shadow: 1px 1px 5px grey; 
-	/* background: linear-gradient(rgba(249, 244, 244, 0.6),rgba(225, 183, 159, 0.8)); */
-	background:linear-gradient(to right,#FFCE54,#ED5564);
-	height: 230px;
+	/* background: linear-gradient(rgba(249, 244, 244, 0.6),rgba(225, 183, 159, 0.8)); 
+
+	linear-gradient(to right,#F6DD9E,#F0818C); 
+	background:linear-gradient(to right,#FFCE54,#ED5564); first */
+	background:linear-gradient(to right,#F6DD9E,#F0818C);
+	
+	height: 250px;
 	color: #060606;
 	
 }
@@ -155,7 +173,7 @@ body{
 
 .bg{
 	margin-top: 10px; 
-	background-color: honeydew;
+	background-color: #fafffa;
 	
 }
 
@@ -163,6 +181,7 @@ body{
 
 	margin-top: 10px; 
 }
+
 @media screen and(min-width: 768px){
 	.characters{
 	
