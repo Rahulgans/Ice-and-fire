@@ -10,25 +10,17 @@ myApp.controller("HouseDetailsController",["$http","ThroneService","$routeParams
 
 	this.housesDetails = function(){
 
-		ThroneService.toHouseBtn = "house1";
-		ThroneService.toBookBtn = "";
-		ThroneService.toCharBtn = "";
-
-		console.log(ThroneService.toHouseBtn);
-
 		ThroneService.housesDetailsApi(main.houseId)
 		.then(function successCallback(response){
 		
-		//	console.log(response.data);
-
-
 			main.houseData.push(response.data);
+
 		},function errorCallback(reason){
-		alert("Error in GET");
-	})
+			alert("Error in GET");
+		})
 
 	}; // function ends
 
-this.housesDetails();
+	this.housesDetails();
 	
-	}]) // controller ends
+}]) // controller ends

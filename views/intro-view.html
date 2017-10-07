@@ -1,227 +1,311 @@
       
-            
+                      
+            <!-- INTRO TABS -->
 
-          <div class="container-fluid  main-row">   <!-- INTRO TABS -->
-          <div class="row text-center">
-          <div class="col-xs-6 col-md-3 tabs">
-          <a ng-click="mainCtrl.value1 =! mainCtrl.value1" class="intro-nav">
-           <span><img src="images/credit-card.png" class="img-responsive main-image"></span>
-           <h3>All Details</h3></a>
-          </div>
-           <div class="col-xs-6 col-md-3 tabs">
-           <a ng-click="mainCtrl.booksShowHide()" class="intro-nav">
-           <span><img src="images/book.png" class="img-responsive main-image"></span>
-           <h3>Books</h3></a>
-          </div>
-           <div class="col-xs-6 col-md-3 tabs">
-            <a ng-click="mainCtrl.charsShowHide()" class="intro-nav">
-           <span><img src="images/sword.png" class="img-responsive main-image"></span>
-           <h3>Characters</h3></a>
-          </div>
-           <div class="col-xs-6 col-md-3 tabs">
-             <a ng-click="mainCtrl.housesShowHide()" class="intro-nav">
-           <span><img src="images/castle.png" class="img-responsive main-image"></span>
-           <h3>Houses</h3></a>
-          </div>
-          </div>
-          </div>      <!-- TABS ENDS -->
-
-           <div class="container-fluid" ng-if = "mainCtrl.value1">  <!-- ALL DETAILS STARTS -->
-              <div class="row">    <!--FILTER OPTION STARTS -->
-
-               <div class="col-xs-12 text-center filter-btns">
-               <div class="row">
-                  <div class="col-md-4">
-                    <button class="btn btn-danger" type="button" ng-click="mainCtrl.sortAllKey =! mainCtrl.sortAllKey">Sort by Name<span  ng-show="mainCtrl.sortAllKey" style="margin-left: 5px;"><i class="fa fa-caret-down"></i></span>
-                   <span ng-show="!mainCtrl.sortAllKey" style="margin-left: 5px;"><i class="fa fa-caret-up"></i></span></button>
-                 </div>
-
-                  <div class="col-md-4">
-                  <div class="input-group filt-book" style="margin:10px 0px;">
-                   <span class="input-group-addon">Book
-                    <span class="glyphicon glyphicon-book" style="color: brown;"></span>
-                    </span>
-                    <input type="text" name="book" class="form-control" placeholder="Name here.." ng-model="searchName1.name">
+            <div class="container-fluid  main-row">   
+                <div class="row text-center">
+                   <div class="col-xs-6 col-md-3 tabs">
+                     <a ng-click="mainCtrl.allShowHide()" class="intro-nav">
+                     <span><img src="css/images/details.png" class="img-responsive main-image"></span>
+                     <h3>All Details</h3>
+                     </a>
                   </div>
-               </div>
-               
-                <div class="col-md-4">
-                <button class="btn btn-danger" type="button" ng-click="">Sort by Alias</button>
-                </div>
-         </div>   
-        </div>   <!-- FILTER OPTIONS ENDS -->
 
-            </div>
-            
+                   <div class="col-xs-6 col-md-3 tabs">
+                     <a ng-click="mainCtrl.booksShowHide()" class="intro-nav">
+                     <span><img src="css/images/book.png" class="img-responsive main-image"></span>
+                     <h3>Books</h3>
+                     </a>
+                  </div>
+                  
+                   <div class="col-xs-6 col-md-3 tabs">
+                     <a ng-click="mainCtrl.charsShowHide()" class="intro-nav">
+                     <span><img src="css/images/sword.png" class="img-responsive main-image"></span>
+                     <h3>Characters</h3>
+                     </a>
+                  </div>
+                  
+                   <div class="col-xs-6 col-md-3 tabs">
+                     <a ng-click="mainCtrl.housesShowHide()" class="intro-nav">
+                     <span><img src="css/images/castle.png" class="img-responsive main-image"></span>
+                     <h3>Houses</h3>
+                     </a>
+                   </div>
+                 </div>
+              </div>      <!-- TABS ENDS -->
 
-
-               <div class="row">
-               <div ng-repeat = "item in mainCtrl.allData | limitTo : mainCtrl.noOfElements | filter : searchName1">
-             
-               <books-dir ng-if ="item.isbn"></books-dir> 
-
-                <houses-dir ng-if ="item.region"></houses-dir>
-
-               <characters-dir ng-if ="item.gender"></characters-dir>
+              <div class="container-fluid all-details" ng-if = "mainCtrl.value1">  <!-- ALL DETAILS STARTS -->
               
-              </div>
+                <div class="row text-center">    <!--FILTER OPTION STARTS -->
+                  
+                   <div class="col-md-3 col-md-offset-1">
+                      <div class="input-group filt-book" style="margin:10px 0px;">
+                        <span class="input-group-addon">Search by Name
+                          <span class="glyphicon glyphicon-eye-open" style="color: brown;"></span>
+                        </span>
+                        <input type="text" name="book" class="form-control" placeholder="Name here.." ng-model="searchName1.name">
+                      </div>
+                  </div>
+                  
 
-              <div class="col-xs-12 text-center">
-                <button class="btn btn-info" ng-click="mainCtrl.viewMore()">View More</button>
-              </div>
-              </div>
+                  <div class="col-md-3">
+                      <button class="btn btn-danger" type="button" ng-click="mainCtrl.sortAllKey =! mainCtrl.sortAllKey">SORT<span  ng-show="!mainCtrl.sortAllKey" style="margin-left: 5px;"><i class="fa fa-arrow-down"></i></span>
+                      <span ng-show="mainCtrl.sortAllKey" style="margin-left: 5px;"><i class="fa fa-arrow-up"></i></span></button>
+                  </div>
+
+                  <div class="col-md-3 col-md-offset-1">
+                    <div class="input-group filt-book" style="margin:10px 0px;">
+                      <span class="input-group-addon">Search other
+                        <span class="glyphicon glyphicon-search" style="color: brown;"></span>
+                      </span>
+                        <input type="text" name="book" class="form-control" placeholder="Other fields.." ng-model="searchAny">
+                    </div>
+                  </div>    
+                 
+                </div>   <!-- FILTER OPTIONS ENDS -->
+                   
+              
+                <div class="row">
+                  <div ng-repeat = "item in mainCtrl.allData | orderBy: mainCtrl.sortAllKey? '-name':'name' | filter : searchAny | filter : searchName1 | limitTo : mainCtrl.noOfElements">
+             
+                    <books-dir ng-if ="item.isbn"></books-dir> 
+
+                    <houses-dir ng-if ="item.region"></houses-dir>
+
+                    <characters-dir ng-if ="item.gender"></characters-dir>
+              
+                  </div>
+                    <to-top></to-top>
+                </div>
+
+                  <div class="col-xs-12 col-md-5 col-md-offset-3 text-center" style="margin-top: 30px;">
+                   <button class="btn btn-info" style="padding: 5px 15px;" ng-click="mainCtrl.viewMore()">View More</button>
+                  </div>
+
               </div>  <!-- ALL DETAILS ENDS -->
 
             
-               <!--      ****************** INDIVIDUAL CARDS **************      -->
+                 <!--   INDIVIDUAL CARDS     -->
+                
               
-           
-               <div class="container-fluid" ng-if ="mainCtrl.value2">   <!-- BOOKS STARTS -->
-          
-               <div class="row text-center"> <!--FILTER OPTION STARTS -->
-              
-                 <div class="col-md-4">
-                  <div class="input-group filt-book" style="margin:10px 0px;">
-                   <span class="input-group-addon">Book
-                    <span class="glyphicon glyphicon-book" style="color: brown;"></span>
-                    </span>
-                    <input  type="text" name="book" class="form-control" placeholder="Book name here.." ng-model="searchName1.name">
-                  </div>
-               </div>
+                <!-- BOOKS STARTS  -->
 
-                <div class="col-md-4">
-                  <button class="btn btn-danger" type="button" ng-click="mainCtrl.sortKey1 =! mainCtrl.sortKey1">Sort by Name<span ng-show="mainCtrl.sortKey1" style="margin-left: 5px;"><i class="fa fa-caret-down"></i></span>
-                   <span ng-show="!mainCtrl.sortKey1" style="margin-left: 5px;"><i class="fa fa-caret-up"></i></span></button>
-                 </div>
+              <div class="container-fluid book-details" ng-if ="mainCtrl.value2">  
+          
+                <div class="row text-center"> <!--FILTER OPTION STARTS -->
+              
+                  <div class="col-md-4">
+                    <div class="input-group filt-book" style="margin:10px 0px;">
+                      <span class="input-group-addon">Book
+                        <span class="glyphicon glyphicon-book" style="color: brown;"></span>
+                      </span>
+                      <input  type="text" name="book" class="form-control" placeholder="Book name here.." ng-model="searchName1.name">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <button class="btn btn-danger" type="button" ng-click="mainCtrl.sortKey1 =! mainCtrl.sortKey1">Sort by Name<span ng-show="mainCtrl.sortKey1" style="margin-left: 5px;"><i class="fa fa-arrow-down"></i></span>
+                     <span ng-show="!mainCtrl.sortKey1" style="margin-left: 5px;"><i class="fa fa-arrow-up"></i></span>
+                    </button>
+                  </div>
 
                  
-
-                <div class="col-md-4">
-                  <div class="input-group filt-book" style="margin:10px 0px;">
-                   <span class="input-group-addon">Book Pages
-                    <span class="glyphicon glyphicon-book" style="color: brown;"></span>
-                    </span>
-                    <input  type="text" name="book" class="form-control" placeholder="No of pages.." ng-model="searchName2.numberOfPages">
+                  <div class="col-md-4">
+                    <div class="input-group filt-book" style="margin:10px 0px;">
+                      <span class="input-group-addon">Publishers
+                        <span class="glyphicon glyphicon-tags" style="color: brown;"></span>
+                      </span>
+                      <input  type="text" name="book" class="form-control" placeholder="Enter publisher.." ng-model="searchName2.publisher">
+                    </div>
                   </div>
-               </div>
-             </div> <!-- FILTER OPTIONS ENDS -->
-
-              <div class="row">
-               <div ng-repeat = "item in mainCtrl.bookData | orderBy : !mainCtrl.sortKey1? 'name':'-name' | filter : searchName1 | filter : searchName2">   
-               <books-dir></books-dir> 
-               </div>
-               </div>
-               </div>   <!-- BOOK ENDS -->
+                </div> <!-- FILTER OPTIONS ENDS -->
 
 
-               <div class="container-fluid" ng-if ="mainCtrl.value3">  <!-- CHARACTER STARTS -->
 
-               <div class="row text-center">      <!-- FILTER OPTION STARTS -->
-              
-               <div class="col-md-4">
-                <div class="input-group filt-book" style="margin:10px 0px;">
-                 <span class="input-group-addon">Charcters
-                  <span class="glyphicon glyphicon-fire" style="color: brown;"></span>
-                  </span>
-                 <input  type="text" name="character" class="form-control" placeholder="Character name here.." ng-model="searchName2.name">
-                 </div>
+                <div class="row">
+                  
+                  <div ng-repeat = "item in mainCtrl.bookData | orderBy : !mainCtrl.sortKey1? 'name':'-name' | filter : searchName1 | filter : searchName2">   
+                    <books-dir></books-dir> 
+                  </div>
+                  <to-top></to-top>
                 </div>
 
-          <div class="col-md-4">
-           <button class="btn btn-danger" type="button" style="margin: 10px 0px;" ng-click="mainCtrl.sortKey2 =! mainCtrl.sortKey2">Sort by Name<span ng-show="mainCtrl.sortKey2" style="margin-left: 10px;"><i class="fa fa-caret-down"></i></span>
-                   <span ng-show="!mainCtrl.sortKey2" style="margin-left: 10px;"><i class="fa fa-caret-up"></i></span></button>
-                 </div>
+                <div class="row">
+                  <div class="col-xs-12 text-center"> <!-- BOOKS DID YOU KNOW  -->
+                    <div style="opacity: 0.6;">
+                      <span>
+                      <h3> DID YOU KNOW<i class="fa fa-question-circle fa-2x text-danger" style="margin-left: 10px;" aria-hidden="true"></i>
+                      </h3>
+                      </span>
+                      <article><strong>George R.R. Martin</strong> made a bet with his friend Patrick St. Denis that if the Dallas Cowboys ever had a better season than the New York Giants, he'd make St. Denis into a character and have him brutally ripped apart by giants. After losing the bet, Martin kept to his word and in <strong>"A Dance with Dragons"</strong> there's a character named Sir Patrek of King's Mountain who's killed by giants. Martin even made the character's heraldry looks like the Dallas Cowboy's logo.George R.R. Martin made a bet with his friend Patrick St. Denis that if the Dallas Cowboys ever had a better season than the New York Giants, he'd make St. Denis into a character and have him brutally ripped apart by giants. After losing the bet, Martin kept to his word and in "A Dance with Dragons" there's a character named Sir Patrek of King's Mountain who's killed by giants. Martin even made the character's heraldry looks like the Dallas Cowboy's logo.
+                      </article>
+                    </div>
+                    <hr style="border-top: 2px solid #e8dfdf;"> 
+                  </div>
+                </div>
+              </div>   <!-- BOOK CONTAINER ENDS -->
+
+
+
+              <!-- CHARACTER STARTS -->
+
+              <div class="container-fluid char-details" ng-if ="mainCtrl.value3">  
+
+                 <div class="row text-center">      <!-- FILTER OPTION STARTS -->
+              
+                    <div class="col-md-4">
+                      <div class="input-group filt-book" style="margin:10px 0px;">
+                        <span class="input-group-addon">Charcters
+                         <span class="glyphicon glyphicon-fire" style="color: brown;"></span>
+                        </span>
+                        <input  type="text" name="character" class="form-control" placeholder="Character name here.." ng-model="searchName2.name">
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                       <button class="btn btn-danger" type="button" style="margin: 10px 0px;" ng-click="mainCtrl.sortKey2 =! mainCtrl.sortKey2">Sort by Name
+                        <span ng-show="!mainCtrl.sortKey2" style="margin-left: 10px;"><i class="fa fa-arrow-down"></i>
+                        </span>
+                        <span ng-show="mainCtrl.sortKey2" style="margin-left: 10px;"><i class="fa fa-arrow-up"></i>
+                        </span>
+                      </button>
+                    </div>
                       
               
-                <div class="col-md-4">
-                <div class="input-group filt-book" style="margin:10px 0px;">
-                 <span class="input-group-addon">Charcter-Alias
-                  <span class="glyphicon glyphicon-flash" style="color: brown;"></span>
-                  </span>
-                 <input  type="text" name="character" class="form-control" placeholder="Alias name here.." ng-model="searchName3.aliases">
-                 </div>
+                    <div class="col-md-4">
+                      <div class="input-group filt-book" style="margin:10px 0px;">
+                        <span class="input-group-addon">Charcter-Alias
+                          <span class="glyphicon glyphicon-flash" style="color: brown;"></span>
+                        </span>
+                        <input  type="text" name="character" class="form-control" placeholder="Alias name here.." ng-model="searchName3.aliases">
+                      </div>
+                    </div>
+                </div> <!-- FILTER OPTIONS ENDS -->
+
+                <div class="toggle-entry">   <!-- CHARACTER TOP NEXT & PREVIOUS BUTTONS -->
+                  <a ng-click="mainCtrl.prevFunc('characters')" style="cursor: pointer;">
+                     <span><i class="fa fa-chevron-left fa-2x text-danger"></i></span>
+                  </a>
+                  <a ng-click="mainCtrl.nextFunc('characters')"  style="cursor: pointer;">
+                     <span><i class="fa fa-chevron-right fa-2x text-danger"></i></span>
+                </a>
                 </div>
-              </div> <!-- FILTER OPTIONS ENDS -->
             
-              <div class="row">
-              <div ng-repeat = "item in mainCtrl.charData | filter : searchName2 | filter : searchName3">
+                <div class="row">
+                  <div ng-repeat = "item in mainCtrl.charData | orderBy: mainCtrl.sortKey2? '-name':'name' | filter : searchName2 | filter : searchName3">
 
-               <characters-dir></characters-dir> 
+                    <characters-dir></characters-dir> 
               
-               </div>
-               <div class="row">
-               <div class=" col-xs-12 toggle-entry">    <!-- NEXT & PREVIOUS BUTTONS -->
-
-              <button class="btn btn-default text-center" ng-click='mainCtrl.prevFunc("characters")'><span><i class="fa fa-chevron-left" style="margin-right:5px;" aria-hidden="true"></i></span>Previous</button>
-               <button class="btn btn-default text-center" ng-click='mainCtrl.nextFunc("characters")'>Next<span><i class="fa fa-chevron-right" style="margin-left:5px; " aria-hidden="true"></i></span></button>
-              </div>
-
-              <div class="col-xs-12 text-center"> <!-- CHAR DID YOU KNOW  -->
-                  <div style="opacity: 0.6;">
-                  <span><h3> DID YOU KNOW<i class="fa fa-question-circle fa-2x text-danger" style="margin-left: 10px;" aria-hidden="true"></i>
-                   </h3></span>
-                  <article><span><strong>Khaleesi</strong></span> is actually a title: It's the Dothraki version of queen, but fans have embraced it as a name for their baby girls. According to a Social Security Administration list of baby names in 2014, <strong>Khaleesi</strong> was the 755th most popular baby name for girls. In 2013, it was the 1,021st most popular baby. So, it's only getting more popular over time.</article>
                   </div>
-                   <hr style="border-top: 2px solid #e8dfdf;"> 
-                   </div>
-              </div>   <!-- ROW ENDS -->
-             </div>     <!-- CHARACTER ENDS -->
+                  <to-top></to-top>
+                
+               
+                  <div class=" col-xs-12 toggle-entry">    <!-- CHARACTER BOTTOM NEXT & PREVIOUS BUTTONS -->
 
-                    <!--      HOUSE STARTS       -->
-
-              <div class="container-fluid" ng-if="mainCtrl.value4"> 
-
-               <div class="row text-center">      <!-- FILTER OPTION STARTS -->
-              
-               <div class="col-md-4">
-
-                <div class="input-group filt-book" style="margin:10px 0px;">
-                 <span class="input-group-addon">Houses
-                  <span class="glyphicon glyphicon-fire" style="color: brown;"></span>
-                  </span>
-                 <input  type="text" name=" house" class="form-control" placeholder="house name here.." ng-model="searchName2.name">
-                 </div>
+                    <button class="btn btn-default text-center" ng-click='mainCtrl.prevFunc("characters")'>
+                      <span><i class="fa fa-chevron-left" style="margin-right:5px;" aria-hidden="true"></i></span>Previous
+                    </button>
+                    <button class="btn btn-default text-center" ng-click='mainCtrl.nextFunc("characters")'>Next
+                      <span><i class="fa fa-chevron-right" style="margin-left:5px; " aria-hidden="true"></i></span>
+                    </button>
+                  </div>
                 </div>
 
-          <div class="col-md-4">
-           <button class="btn btn-danger" type="button" style="margin: 10px 0px;" ng-click="mainCtrl.sortKey3 =! mainCtrl.sortKey3">Sort by Name<span ng-show="mainCtrl.sortKey2" style="margin-left: 10px;"><i class="fa fa-caret-down"></i></span>
-                   <span ng-show="!mainCtrl.sortKey3" style="margin-left: 10px;"><i class="fa fa-caret-up"></i></span></button>
-                 </div>
+                <div class="row">
+                  <div class="col-xs-12 text-center"> <!-- CHAR DID YOU KNOW  -->
+                    <div style="opacity: 0.6;">
+                      <span>
+                        <h3> DID YOU KNOW
+                        <i class="fa fa-question-circle fa-2x text-danger" style="margin-left: 10px;" aria-hidden="true"></i>
+                       </h3>
+                      </span>
+                      <article><strong>Khaleesi</strong>is actually a title: It's the Dothraki version of queen, but fans have embraced it as a name for their baby girls. According to a Social Security Administration list of baby names in 2014, <strong>Khaleesi</strong> was the 755th most popular baby name for girls. In 2013, it was the 1,021st most popular baby. So, it's only getting more popular over time.
+                      </article>
+                    </div>
+                    <hr style="border-top: 2px solid #e8dfdf;"> 
+                  </div>
+                </div>    <!-- ROW ENDS -->
+              </div>   <!-- CHARACTER ENDS -->
+
+            
+
+              <!--      HOUSE STARTS       -->
+
+              <div class="container-fluid house-details" ng-if="mainCtrl.value4"> 
+
+                <div class="row text-center">      <!-- FILTER OPTION STARTS -->
+              
+                  <div class="col-md-4">
+
+                    <div class="input-group filt-book" style="margin:10px 0px;">
+                      <span class="input-group-addon">Houses
+                        <span class="glyphicon glyphicon-flag" style="color: brown;"></span>
+                      </span>
+                      <input  type="text" name="house" class="form-control" placeholder="house name here.." ng-model="searchName2.name">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <button class="btn btn-danger" type="button" style="margin: 10px 0px;" ng-click="mainCtrl.sortKey3 =! mainCtrl.sortKey3">Sort by Name
+                      <span ng-show="!mainCtrl.sortKey3" style="margin-left: 10px;"><i class="fa fa-arrow-down"></i>
+                      </span>
+                      <span ng-show="mainCtrl.sortKey3" style="margin-left: 10px;"><i class="fa fa-arrow-up"></i>
+                      </span>
+                    </button>
+                  </div>
                       
               
-                <div class="col-md-4">
-                <div class="input-group filt-book" style="margin:10px 0px;">
-                 <span class="input-group-addon">Region
-                  <span class="glyphicon glyphicon-flash" style="color: brown;"></span>
-                  </span>
-                 <input  type="text" name="house" class="form-control" placeholder="region name here.." ng-model="searchName3.region">
-                 </div>
-                </div>
-              </div> <!-- FILTER OPTIONS ENDS -->
-            
-              <div class="row">
-              <div ng-repeat = "item in mainCtrl.houseData | filter : searchName2 | filter : searchName3">
-
-               <houses-dir></houses-dir> 
-              
-               </div>
-
-               <div class=" col-xs-12 toggle-entry">    <!-- NEXT & PREVIOUS BUTTONS -->
-
-              <button class="btn btn-default text-center" ng-click='mainCtrl.prevFunc("houses")'><span><i class="fa fa-chevron-left" style="margin-right:5px;" aria-hidden="true"></i></span>Previous</button>
-               <button class="btn btn-default text-center" ng-click='mainCtrl.nextFunc("houses")'>Next<span><i class="fa fa-chevron-right" style="margin-left:5px; " aria-hidden="true"></i></span></button>
-              </div>
-
-              <div class="col-xs-12 text-center"> <!-- CHAR DID YOU KNOW  -->
-                  <div style="opacity: 0.6;">
-                  <span><h3> DID YOU KNOW<i class="fa fa-question-circle fa-2x text-danger" style="margin-left: 10px;" aria-hidden="true"></i>
-                   </h3></span>
-                  <article><span><strong>Khaleesi</strong></span> is actually a title: It's the Dothraki version of queen, but fans have embraced it as a name for their baby girls. According to a Social Security Administration list of baby names in 2014, <strong>Khaleesi</strong> was the 755th most popular baby name for girls. In 2013, it was the 1,021st most popular baby. So, it's only getting more popular over time.</article>
+                  <div class="col-md-4">
+                    <div class="input-group filt-book" style="margin:10px 0px;">
+                      <span class="input-group-addon">Region
+                        <span class="glyphicon glyphicon-grain" style="color:brown;"></span>
+                      </span>
+                      <input  type="text" name="house" class="form-control" placeholder="Region name here.." ng-model="searchName3.region">
+                    </div>
                   </div>
-                     <hr style="border-top: 2px solid #e8dfdf;"> -->
-              </div>   <!-- ROW ENDS -->
-             </div>     <!--HOUSE ENDS -->
+                </div> <!-- FILTER OPTIONS ENDS -->
 
+                <div class="toggle-entry">   <!-- TOP SIDE NEXT & PREV BUTTONS-->
+                  <a ng-click="mainCtrl.prevFunc('houses')"  style="cursor: pointer;">
+                     <span><i class="fa fa-chevron-left fa-2x text-danger"></i></span>
+                  </a>
+                  <a ng-click="mainCtrl.nextFunc('houses')"  style="cursor: pointer;">
+                     <span><i class="fa fa-chevron-right fa-2x text-danger"></i></span>
+                </a>
+                </div>
+            
+                <div class="row" id="house1">
+                   <div ng-repeat = "item in mainCtrl.houseData | orderBy : !mainCtrl.sortKey3? 'name' : '-name' | filter : searchName2 | filter : searchName3">
+
+                      <houses-dir></houses-dir> 
+              
+                    </div>
+                    <to-top></to-top>
+
+                  <div class=" col-xs-12 toggle-entry">    <!-- BOTTOM NEXT & PREVIOUS BUTTONS -->
+
+                    <button class="btn btn-default text-center" ng-click='mainCtrl.prevFunc("houses")'>
+                      <span><i class="fa fa-chevron-left" style="margin-right:5px;" aria-hidden="true"></i></span>Previous
+                    </button>
+                    <button class="btn btn-default text-center" ng-click='mainCtrl.nextFunc("houses")'>Next
+                      <span><i class="fa fa-chevron-right" style="margin-left:5px; " aria-hidden="true"></i></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="row">
+                   <div class="col-xs-12 text-center"> <!-- HOUSE DID YOU KNOW  -->
+                    <div style="opacity: 0.6;">
+                      <span>
+                        <h3> DID YOU KNOW<i class="fa fa-question-circle fa-2x text-danger" style="margin-left: 10px;" aria-hidden="true"></i>
+                        </h3>
+                      </span>
+                      <article>George R.R. Martin has confirmed that the words of <strong> House Bolton</strong> are <b>"Our Blades are sharp"</b>, most likely because of the Bolton's history of flaying their enemies alive.
+                      </article>
+                    </div>
+                      <hr style="border-top: 2px solid #e8dfdf;">
+                  </div>   
+                </div>   <!-- ROW ENDS -->  
+              </div>  <!--HOUSE ENDS -->
                
 
 

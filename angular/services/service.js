@@ -5,11 +5,6 @@ myApp.service("ThroneService",function($http){
 
 	this.pageKey = 1 ;
 
-	this.toBookBtn;	
-
-	this.toCharBtn;
-	this.toHouseBtn;
-
 	
 	this.baseUrl= "https://anapioficeandfire.com/api";
 	
@@ -35,8 +30,7 @@ myApp.service("ThroneService",function($http){
 	}
 	
 	this.characters_houses_Api = function(type,value){   // FOR CHARACTERS AND HOUSES COMBINED 
-	
-		
+
 		return $http.get(main.baseUrl+"/"+type+"/?page="+value+"&pageSize=15");
 	}
 

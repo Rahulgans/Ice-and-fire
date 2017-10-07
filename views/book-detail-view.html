@@ -2,37 +2,37 @@
 
 
 	<div class="jumbotron bg">
-	 <div class="container-fluid">
-		<div class="row book-jumbo" ng-repeat="data in bookCtrl.bookData">
-		 <div class="col-xs-12 text-center">
-			<h2>
-			<span style="margin:0px 5px;"><i class="fa fa-star"></i></span>{{ data.name }}<span style="margin:0px 5px;"><i class="fa fa-star"></i></span>
-			</h2>
-		</div>
+	 	<div class="container-fluid">
+			<div class="row book-jumbo" ng-repeat="data in bookCtrl.bookData">
+		 		<div class="col-xs-12 text-center">
+					<h2>
+					<span style="margin:0px 5px;"><i class="fa fa-star"></i></span>{{ data.name }}
+					<span style="margin:0px 5px;"><i class="fa fa-star"></i></span>		
+					</h2>
+				</div>
 		
-			<div class="col-xs-12 col-md-6 text-center book-content">
-				<h5><b>Author</b> : {{ bookCtrl.author }}</h5>
-				<h5><b>Country</b> : {{ data.country }}</h5>
-				<h5><b>Pages</b> : {{ data.numberOfPages }}</h5>
-				<h5><b>Publisher</b> : {{ data.publisher }}</h5>
-				<h5><b>Released on</b> : {{ data.released | date:medium }}</h5>
-			</div>
+				<div class="col-xs-12 col-md-5 text-center book-content">
+					<h5><b>Author</b> : {{ bookCtrl.author }}</h5>
+					<h5><b>Country</b> : {{ data.country }}</h5>
+					<h5><b>Pages</b> : {{ data.numberOfPages }}</h5>
+					<h5><b>Publisher</b> : {{ data.publisher }}</h5>
+					<h5><b>Released on</b> : {{ data.released | date:medium }}</h5>
+				</div>
 			
-			<div class="col-xs-12 col-md-5 col-md-offset-1 text-center book-content" ng-if = 'data.povCharacters.length >= 1'>
+				<div class="col-xs-12 col-md-5 col-md-offset-1 text-center book-content" ng-if = 'data.povCharacters.length >= 1'>
 				
-				<h4>Main Characters</h4>
-				<hr style="width: 50%; border-top: 1px solid #0c0909; margin-top: 5px;"></hr>
+					<h4>Main Characters</h4>
+					<hr style="width: 50%; border-top: 1px solid #0c0909; margin-top: 5px;"></hr>
 				
-				<div ng-repeat ="pov in data.povCharacters">
-				 <h5><a ng-href ='#/characters/{{ pov.split("/").pop() }}'>{{ pov }}</a></h5>
-				</div> 
+					<div ng-repeat ="pov in data.povCharacters">
+				 		<h5><a ng-href ='#/characters/{{ pov.split("/").pop() }}'>{{ pov }}</a></h5>
+					</div> 
 				</div>  <!--  MainCharacters div ends -->
 				
-				<div class="col-xs-12 toggle-entry">
-                  <a ng-href="#/" class="btn btn-default btn-custom" style="display: inline-block;">Home</a>
-                  <a class="btn btn-default btn-custom" ng-href="#toBook" style="display: inline-block;">Back to Books</a> 
-			</div> <!-- toggle-entry ends -->
+				<div class="col-xs-12" style="display: flex;justify-content: center;margin: 10px 0px;">
+                 	<a ng-href="#/" class="btn btn-default btn-custom" style="display: inline-block;">Home</a>
+				</div> <!-- toggle-entry ends -->
 			</div>  <!--  row ends -->
 		</div>	
 				 
-		</div>  <!-- jumbotron ends  -->
+	</div>  <!-- jumbotron ends  -->

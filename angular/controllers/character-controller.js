@@ -11,16 +11,8 @@ myApp.controller("CharDetailsController",["$http","ThroneService","$routeParams"
 
 	this.charactersDetails = function(){
 
-		ThroneService.toHouseBtn = "";
-		ThroneService.toBookBtn = "";
-		ThroneService.toCharBtn = "char1";
-
-		console.log(ThroneService.toCharBtn);
-
 		ThroneService.charactersDetailsApi(main.charId)
 		.then(function successCallback(response){
-		
-		//	console.log(response.data);
 
 			main.charData.push(response.data);  
 			this.series =[]; // For more authors
@@ -30,7 +22,7 @@ myApp.controller("CharDetailsController",["$http","ThroneService","$routeParams"
 				this.series.push(response.data.tvSeries[i]);
 				//console.log(main.people);
 				}
-		main.seasons = this.series.toString(); 
+			main.seasons = this.series.toString(); 
 
 
 		},function errorCallback(reason){
@@ -40,4 +32,4 @@ myApp.controller("CharDetailsController",["$http","ThroneService","$routeParams"
 
 	this.charactersDetails();
 	
-	}]) // controller ends
+}]) // controller ends

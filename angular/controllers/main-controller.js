@@ -1,40 +1,38 @@
 
-myApp.controller("MainController",["$http","ThroneService","$timeout",function($http,ThroneService,$timeout){
+myApp.controller("MainController",["$http","ThroneService",function($http,ThroneService){
 
 	var main = this;
 	this.baseUrl ="https://anapioficeandfire.com/api";
 
 	 this.allData=[];
-	 this.noOfElements = 30;
-
-	 this.viewMore = function () {
-    main.noOfElements += 30;  
-	 
-	  };
-
+	 this.noOfElements = 20;
 	
-	this.bookData = {};
-	this.charData= {};
-	this.houseData={};
+	this.bookData  = {};
+	this.charData  = {};
+	this.houseData = {};
 
-	this.value1 = false ;  // show/hide for List all
+	this.value1 = false ;  // SHOW/HIDE ALL DETAILS
 
-	this.value2 = false ;  // show/hide for books
+	this.value2 = false ;  //  SHOW/HIDE BOOK
 
-	this.value3 = false ;  //show/hide for characters
+	this.value3 = false ;  //  SHOW/HIDE CHARACTER
 
-	this.value4 = false ;  // show/hide for houses
+	this.value4 = false ;  // SHOW/HIDE HOUSE
 	
-	this.nextKey1 = 1; // For traversing pages in Characters
-	this.nextKey2 = 1; // For traversing pages in Houses
- 
-	this.check1 = 1 ;
-	this.check2 = 1;
+	this.nextKey1 = 1; // FOR TRAVERSING PAGES IN CHARACTERS
 
-	this.sortAllKey = false; // Sort For all details
+	this.nextKey2 = 1; // FOR TRAVERSING PAGES IN HOUSES
+
+	this.sortAllKey = false; // SORT FOR ALL DETAILS
 	this.sortKey1 = false;
 	this.sortKey2 = false;
 	this.sortKey3 = false;
+
+	this.viewMore = function () {   //FOR LOADING MORE DATA
+   		
+   		 main.noOfElements += 20;  
+	 
+	};
 
 
 
@@ -42,181 +40,166 @@ myApp.controller("MainController",["$http","ThroneService","$timeout",function($
 
 		ThroneService.booksApi(12)
 		.then(function successCallback(response){
-	//	 console.log(response.data);
 			
 		main.bookData = response.data ;
 		main.allData.push.apply(main.allData,main.bookData);
-		console.log(main.bookData);
+		//console.log(main.bookData);
 
-		
-	},function errorCallback(reason){
+		},function errorCallback(reason){
 		alert("Error in GET");
-	})
-};
+		})
+	};
 
- this.allBooks();
+ 	this.allBooks();
   
    this.allHouses = function(){
     
-   for(var i=1;i<12;i++){
-      ThroneService.housesAllApi([i])
-      .then(function successCallback(response) {
+   		for(var i=1;i<12;i++){
+      		ThroneService.housesAllApi([i])
+      		.then(function successCallback(response) {
          
-          if(response.data.length>0){
-              main.allData.push.apply(main.allData,response.data);
+          		if(response.data.length>0){
+              	main.allData.push.apply(main.allData,response.data);
          
-                  }
-         
+                } 
 
 
-        }, function errorCallback(reason) {
+        	}, function errorCallback(reason) {
           
             alert("some error occurred. Check the console.");
           
-        });
-    }
+        	});
+    	}
 
-  }// end of all houses
+ 	}// end of all houses
 
    this.allHouses();
    
 
     this.allCharacters = function(){
    
-  		 for(var i=1;i<50;i++){
+  		for(var i=1;i<50;i++){
  		   ThroneService.charactersAllApi([i])
-  		    .then(function successCallback(response) {
-         
-    //      console.log(response.data);
+  		   .then(function successCallback(response) {
       
-          if(response.data.length>0){
-              main.allData.push.apply(main.allData,response.data);
-            //  console.log(main.allData);
-                  }
-                 
-            
-          }, function errorCallback(response) {
+          		if(response.data.length>0){
+              		main.allData.push.apply(main.allData,response.data);
+            		//  console.log(main.allData);
+                 }
+                             
+          	}, function errorCallback(response) {
               
                 alert("Error in GET");
               
             });
-       }
-  }; //  End of allCharacters
+       	}
+  	}; //  End of allCharacters
 
-  this.allCharacters();
+  	this.allCharacters();
                    
 
+	this.allShowHide = function(){   // For hiding and showing on LIST-ALL click
 
- this.booksShowHide = function(){   // For hiding and showing on books click
+		main.value1 =! main.value1;
+		main.value2 = false;
+		main.value3 = false;
+		main.value4 = false;
+	};
+
+
+ 	this.booksShowHide = function(){   // For hiding and showing on books click
 		
 		main.value2 =! main.value2;
 		main.value1 = false;
 		main.value3 = false;
 		main.value4 = false;
 	
-	}
+	};
 
 
-this.loadChar = function(){        // For loading characters  seperately	
+	this.loadChar = function(){        // For loading characters  seperately	
 	
 		ThroneService.characters_houses_Api("characters",1)
 		.then(function successCallback(response){
-		console.log(response.data);
-
-		main.charData = response.data;
+			
+			main.charData = response.data;
 		
-	},function errorCallback(reason){
+		},function errorCallback(reason){
 		alert("Error in GET");
-	})
+		})
 		
+	};
 
-};
+ 	this.loadChar();
 
- this.loadChar();
-
- this.charsShowHide = function(){   // For hiding and showing on characters click
+ 	this.charsShowHide = function(){   // For hiding and showing on characters click
 
  		main.value3 =! main.value3;
 		main.value1 = false;
 		main.value2 = false;
 		main.value4 = false;
- }
+ 	};
 
 
- this.nextFunc = function(type){     //  Function when called displays next page's data
+ 	this.nextFunc = function(type){     //  Function when called displays next page's data
 	
 	
-	if (type === "characters"){
+		if (type === "characters"){
 
-		main.nextKey1 += 1;
-		main.check1 += 1;
-//	console.log(main.nextKey1);
-	
-	
-	ThroneService.characters_houses_Api("characters",main.nextKey1)
-		.then(function successCallback(response){
+			main.nextKey1 += 1;
+
+			ThroneService.characters_houses_Api("characters",main.nextKey1)
+			.then(function successCallback(response){
 		
-	
-		main.charData = response.data;
+			main.charData = response.data;
 		
-	//	console.log(main.data1["chars"]);
-		
-	},function errorCallback(reason){
-		alert("Error in GET");
-	})
-	}
+			},function errorCallback(reason){
+				alert("Error in GET");
+			})
+		}
 
-	else{
+		else{
 
-		main.nextKey2 += 1;
-		main.check2  += 1;
-	//	console.log(main.nextKey2);
+			main.nextKey2 += 1;
 			
-		ThroneService.characters_houses_Api("houses",main.nextKey2)
-		.then(function successCallback(response){
+			ThroneService.characters_houses_Api("houses",main.nextKey2)
+			.then(function successCallback(response){
 		
-	
-		main.houseData = response.data; ;
+				main.houseData = response.data; ;
 		
-	
-		
-	},function errorCallback(reason){
-		alert("Error in GET");
-	})
+			},function errorCallback(reason){
+				alert("Error in GET");
+			})
 
-	} // else ends
+		} // else ends
 
-}; // nextFunc ends
+	}; // nextFunc ends
 
-this.prevFunc = function(type){     // Function when called displays previous page's data
+	this.prevFunc = function(type){     // Function when called displays previous page's data
 	
 
-	if (type === "characters"){
+		if (type === "characters"){
 
 
-	if(main.nextKey1 > 1){	
-		main.nextKey1 -= 1;
-	//	console.log(main.nextKey1);
-	}
+			if(main.nextKey1 > 1){	
+				main.nextKey1 -= 1;
+				//	console.log(main.nextKey1);
+			}
 		
-	ThroneService.characters_houses_Api("characters",main.nextKey1)
-		.then(function successCallback(response){
+			ThroneService.characters_houses_Api("characters",main.nextKey1)
+			.then(function successCallback(response){
 		
-	
-		main.charData = response.data;
-
-	//	console.log(main.data1["chars"]);
+				main.charData = response.data;
 		
-	},function errorCallback(reason){
-		alert("Error in GET");
-	})
-	}
+			},function errorCallback(reason){
+				alert("Error in GET");
+			})
+		}
 
-	else{
+		else{
 
-		if(main.nextKey2 > 1){	
-		main.nextKey2 -= 1;
-	//	console.log(main.nextKey2);
+			if(main.nextKey2 > 1){	
+				main.nextKey2 -= 1;
 		}
 			
 		ThroneService.characters_houses_Api("houses",main.nextKey2)
@@ -224,42 +207,41 @@ this.prevFunc = function(type){     // Function when called displays previous pa
 		
 	
 		main.houseData = response.data; ;
-		
-	
-		
-	},function errorCallback(reason){
-		alert("Error in GET");
-	})
+			
+		},function errorCallback(reason){
+			alert("Error in GET");
+		})
 
-	} // else ends
+		} // else ends
 
-}; // prevFunc ends
+	}; // prevFunc ends
    
 
 
-this.loadHouses = function(){       // For loading Houses seperately
+	this.loadHouses = function(){       // For loading Houses seperately
 
 		ThroneService.characters_houses_Api("houses",1)
 		.then(function successCallback(response){
 	
-		main.houseData = response.data ;
+			main.houseData = response.data ;
 
-		main.allData.push.apply(main.allData,main.houseData);
+			main.allData.push.apply(main.allData,main.houseData);
 
-		 console.log(main.houseData);
+			// console.log(main.houseData);
 
 
-	},function errorCallback(reason){
-		alert("Error in GET");
-	})
-};
+		},function errorCallback(reason){
+			alert("Error in GET");
+		})
+	};
 
- this.loadHouses();
+ 	this.loadHouses();
 
 	this.housesShowHide = function(){    // For hiding and showing on houses click
 
 		main.value4 =! main.value4;
-		console.log(main.value4);
+
+	//	console.log(main.value4);
 		main.value1 = false;
 		main.value2 = false;
 		main.value3 = false;

@@ -10,20 +10,12 @@ myApp.controller("BookDetailsController",["$http","ThroneService","$routeParams"
 	this.author;
 
 	this.charactersPov=[];
-
-
-
+	
 	this.booksDetails = function(){
 
-		ThroneService.toHouseBtn = "";
-		ThroneService.toBookBtn = "book1";
-		ThroneService.toCharBtn = "";
-
-
-		console.log(ThroneService.toBookBtn);
 	
-	ThroneService.booksDetailsApi(main.bookId)
-	.then(function successCallback(response){
+		ThroneService.booksDetailsApi(main.bookId)
+		.then(function successCallback(response){
 	
 		main.bookData.push(response.data);
 
@@ -33,12 +25,9 @@ myApp.controller("BookDetailsController",["$http","ThroneService","$routeParams"
 
 			for(var i in response.data.authors){
 				this.people.push(response.data.authors[i]);
-				//console.log(main.people);
 				}
+
 		main.author = this.people.toString(); 
-
-
-
 
 		},function errorCallback(reason){
 			alert("Error in GET");
@@ -47,8 +36,5 @@ myApp.controller("BookDetailsController",["$http","ThroneService","$routeParams"
 
 	this.booksDetails();
 
-	this.goBack = function(){
 
-	}
-
-	}]) // controller ends
+}]) // controller ends

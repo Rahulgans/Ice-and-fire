@@ -1,18 +1,9 @@
 
-	<!-- 		 <div class="row type-rows" id="house1">
-         <div class="col-xs-12 col-md-9 col-md-offset-1 text-center">
-          <h1 class="type-heading">HOUSES</h1>
-          </div>  
-          
-        </div> -->
-
   
-       <div class="col-xs-12 col-md-4 col-md-offset-1 text-center  houses">
-             <img src="images/house.png" class="img-responsive type-image">
-				       <h3> {{ item.name }}</h3>
-               <h5 ng-if ="item.region !=''">Region : {{ item.region }}</h5>
-          <a ng-href='#/houses/{{item.url.split("/").pop()}}' class="btn btn-default btn-custom" style="display:inline-block;">Know more</a>    
-                </div>
-        
-
-              
+       <div class="col-xs-12 col-md-4 col-md-offset-1 text-center houses">
+             
+             <img src="css/images/house.png" class="img-responsive type-image">
+				     <h3> {{ item.name }}</h3>
+             <h5 ng-if ="item.region !=''">Region : {{ item.region }}</h5>
+             <a ng-href='#/houses/{{item.url.split("/").pop()}}' class="btn btn-default btn-custom" style="display:inline-block;">Know more</a>    
+       </div>

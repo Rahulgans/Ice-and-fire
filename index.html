@@ -4,7 +4,7 @@
 	 
 	 <title>ICE AND FIRE </title>
 	 <meta charset="utf-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"> 
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,69 +13,71 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	
     				<!-- CUSTOM stylesheet -->
-	<link rel="stylesheet" type="text/css" href="thrones.css">
+	<link rel="stylesheet" type="text/css" href="css/thrones.css">
+  <link rel="stylesheet" type="text/css" href="css/toTop.css">
+
 </head>
 <body ng-controller="MainController as mainCtrl">
-	 <nav class="navbar navbar-inverse navbar-fixed-top">
-             <div class="container">
-             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-               <a class="navbar-brand" href="#">Game of Thrones</a>
-              </div>
-              <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
-                     <li><a ng-href="#/">Books</a></li>
-                     <li><a href="#/">Characters</a></li>
-                     <li><a href="#/">Houses</a></li>
-                </ul>
-              </div>
-              </div>
-          </nav> 
-
-          <div class="container-fluid">
-          <div class="row intro-image">
-          
-            </div>
-          </div>
-
-          <div class="container-fluid" ng-view >
-
-
-          </div>
-
-          <footer style="padding: 5px;background-color: #222222; color: ghostwhite; border-top:5px solid gray;margin-top: 30px;">
+	
+   <nav class="navbar navbar-inverse navbar-fixed-top">
             
-          <h3 class="text-center">&copy;Game - Of - Thrones </h3> 
-          </footer>
+     <div class="container">
+       <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Game of Thrones</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a ng-href="#/">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav> 
+
+      <div class="container-fluid">
+        <div class="row intro-image">      
+        </div>
+      </div>
+
+          <div class="container-fluid page" ng-view >
 
 
-				    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          </div>
+
+    <footer style="padding: 5px;background-color: #222222; color: ghostwhite; border-top:5px solid gray;margin-top: 30px;">
+            
+      <h3 class="text-center">&copy;Game - Of - Thrones </h3> 
+    </footer>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             		 <!-- Latest compiled JavaScript -->
 
-           	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   			           <!-- Angular FILES -->
 
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
 	
-    			  <script type="text/javascript" src="angular/app.js"></script>
-            <script type="text/javascript" src="angular/directives/customdirectives.js"></script>
+    <script type="text/javascript" src="angular/app.js"></script>
+    <script type="text/javascript" src="angular/directives/customdirectives.js"></script>
+
         
-			   	  <script type="text/javascript" src="angular/services/service.js"></script>
+	  <script type="text/javascript" src="angular/services/service.js"></script>
 						<!-- Angular controllers -->
      
-			     	<script type="text/javascript" src="angular/controllers/main-controller.js"></script>
-            <script type="text/javascript" src="angular/controllers/book-controller.js"></script>
-            <script type="text/javascript" src="angular/controllers/character-controller.js"></script>
-            <script type="text/javascript" src="angular/controllers/house-controller.js"></script>
-            <script type="text/javascript" src="angular/route.js"></script>
+  	<script type="text/javascript" src="angular/controllers/main-controller.js"></script>
+    <script type="text/javascript" src="angular/controllers/book-controller.js"></script>
+    <script type="text/javascript" src="angular/controllers/character-controller.js"></script>
+    <script type="text/javascript" src="angular/controllers/house-controller.js"></script>
+    <script type="text/javascript" src="angular/route.js"></script>
        
-	</body>
+</body>
 </html>

@@ -1,0 +1,320 @@
+	body{
+		padding-top:50px;
+		font-family: 'Slabo 27px', serif;
+		background-color: #d7d5d2;
+	}
+
+	.intro-column{
+		padding-top: 30px;
+	    padding-bottom: 30px;
+	    box-shadow: 2px 1px 4px grey;
+	}
+
+
+	.tabs{
+		
+		margin: 30px 0px;
+	}
+
+
+	.intro-nav{
+
+		color: black;
+		cursor: pointer;
+		
+	}
+
+	.intro-nav:hover{
+
+		text-decoration: none;
+	}
+
+	.glyphicon {
+		    font-size: 1.2em;
+		    padding-left: 5px;
+
+	}
+
+	.btn-danger{
+		margin-top: 10px;
+	}
+
+@media screen and (max-width:768px){
+
+	.btn-danger {
+		margin-bottom: 10px; 
+	}
+}
+
+	.intro-image{
+		background-image: url("images/got.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50%;
+		height: 200px;
+		opacity: 0.9;
+
+	}
+
+
+	.main-image{
+
+		width: 40px;
+		height: 40px;
+		margin: 0px auto;
+	}
+
+	@media screen and (min-width: 480px){
+
+		.main-image{
+
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+
+	/************  ANIMATIONS  *************/
+
+	.all-details{
+		transition: 0.4s ease-out all;
+	}
+	.all-details.ng-enter{
+		opacity: 0;
+	}
+
+	.all-details.ng-enter.ng-enter-active {
+  		opacity: 1;
+	}
+
+	.all-details.ng-leave {
+  		opacity: 0.4;
+	}
+
+	.all-details.ng-leave.ng-leave-active {
+  		opacity: 0;
+	}	
+
+	.book-details{
+		transition: 0.3s ease-out all;
+	}
+	.book-details.ng-enter{
+		opacity: 0;
+	}
+
+	.book-details.ng-enter.ng-enter-active {
+  		opacity: 1;
+	}
+
+	.book-details.ng-leave {
+  		opacity: 0.5;
+	}
+
+	.book-details.ng-leave.ng-leave-active {
+  		opacity: 0;
+	}		
+
+	.char-details{
+		transition: 0.3s ease-out all;
+	}
+	.char-details.ng-enter{
+		opacity: 0;
+	}
+
+	.char-details.ng-enter.ng-enter-active {
+  		opacity: 1;
+	}
+
+	.char-details.ng-leave {
+  		opacity: 0.6;
+	}
+
+	.char-details.ng-leave.ng-leave-active {
+  		opacity: 0;
+	}	
+
+	.house-details{
+		transition: 0.3s ease-out all;
+	}
+	.house-details.ng-enter{
+		opacity: 0;
+	}
+
+	.house-details.ng-enter.ng-enter-active {
+  		opacity: 1;
+	}
+
+	.house-details.ng-leave {
+  		opacity: 0.6;
+	}
+
+	.house-details.ng-leave.ng-leave-active {
+  		opacity: 0;
+	}	
+
+
+	.page {
+		transition: 0.4s ease-out all;
+	}	
+
+	.page.ng-enter {
+		opacity: 0;
+	}	
+
+	.page.ng-enter.ng-enter-active {
+  		opacity: 1;
+	}
+
+	.page.ng-leave {
+  		opacity: 0.6;
+	}
+
+	.page.ng-leave.ng-leave-active {    /* Animations ends */
+  		opacity: 0;
+	}		
+
+
+
+	.books{
+
+		margin-top: 5%;
+		color: #060301;
+		background: linear-gradient(to bottom,#F4E9E7,#DBC796);
+		 box-shadow: 1px 1px 5px grey; 
+		 height: 18em;
+	}
+		
+	.books:hover{
+		
+		 box-shadow: 1px 3px 20px grey; 
+	}
+		
+	.filter-btns{
+			
+		margin-top: 20px;	
+	}
+
+	.know-btn{
+
+		width: 25px;
+		height: 25px;
+		display: inline-block;
+	}
+
+	.btn-custom{
+		display: block;
+		padding: 2px 14px;
+		border-radius: 5px; 
+		margin: 5px auto;
+		color: #e4d6d6;
+		background-color: #260A05;
+	}
+
+	@media screen and (max-width: 480px){
+		.btn-custom{
+		padding: 2px 8px;
+		}
+
+	}
+
+	.type-image{
+		
+		width: 80px;
+		height: 80px;
+		margin: 20px auto;
+		
+	}
+	.characters{
+		
+		margin-top: 5%;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		background: linear-gradient(rgba(19, 20, 22, 0.8),rgba(9, 6, 6, 0.8));
+		color: ghostwhite;
+		box-shadow: 1px 1px 5px grey; 
+		height: 18em;
+		
+	}
+
+	.characters:hover{
+		 box-shadow: 1px 3px 13px #0a0202; 
+		
+	}
+
+
+	.houses{
+		
+		margin-top: 5%;
+		box-shadow: 1px 1px 5px grey; 
+		background: linear-gradient(to bottom,#F6DD9E,#EF919B);	
+		height: 18em;
+		color: #060606;
+		
+	}
+
+	.houses:hover{
+		 box-shadow: 1px 3px 20px grey; 
+		
+	}
+
+	.toggle-entry{
+		
+		display: flex;
+		justify-content: space-around;
+		margin-top: 40px;
+	}
+
+
+	.book-jumbo{
+
+		background-image: url("images/book1.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.char-jumbo{
+
+		background-image: linear-gradient(rgba(7, 7, 5, 0.8),rgba(86, 67, 67, 0.6)),url("images/char.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		min-height: 18em; 
+	}
+
+	.house-jumbo{
+
+		background-image: linear-gradient(rgba(9, 8, 8, 0.4),rgba(35, 33, 33, 0.8)),url("images/31.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.bg{
+		margin-top: 10px; 
+		background-color: #fafffa;
+		
+	}
+
+	.book-content{
+
+		margin-top: 10px; 
+	}
+
+	@media screen and(min-width: 768px){
+		.characters{
+		
+		margin-top: 10%;
+		}
+
+		.houses{
+		margin-top: 10%;
+		
+		}
+
+		.type-image{
+		
+		width: 120px;
+		height: 120px;
+		}
+	}

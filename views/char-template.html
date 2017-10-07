@@ -1,20 +1,13 @@
 
-              
-             
-               
- <!--  <div class="row type-rows" id="char1"> 
-   <div class="col-xs-12 col-md-9 col-md-offset-1 text-center">
-          <h1 class="type-heading">CHARACTERS</h1>
-          </div>  -->
-     
-   
-               <div class="col-xs-12 col-md-4 col-md-offset-1 text-center characters">
-                <img src="images/helmet1.png" class="img-responsive type-image">
-                <h5 ng-if = 'item.name !=""'>Name : {{ item.name }}</h5>
-                <h5 ng-if = 'item.aliases[0] !=""'>Known as :  " {{ item.aliases[0] }} "</h5>
-                <h5 ng-if = 'item.gender !=""'>Gender : {{ item.gender }}</h5> 
-                 <a ng-href='#/characters/{{ item.url.split("/").pop() }}' class="btn btn-default btn-custom" style="display: inline-block;">Know more</a>
-                </div>
+          <div class="col-xs-12 col-md-4 col-md-offset-1 characters text-center" ng-if = 'item.name !=""'>
+            
+             <img src="css/images/helmet1.png" class="img-responsive type-image">
+             <h5>Name : {{ item.name }}</h5>
+             <h5 ng-if = 'item.aliases[0] !=""'>Known as :  " {{ item.aliases[0] }} "</h5>
+             <h5 ng-if = 'item.gender !=""'>Gender : {{ item.gender }}</h5> 
+             <a ng-href='#/characters/{{ item.url.split("/").pop() }}' class="btn btn-default btn-custom" style="display: inline-block;">Know more</a>
+
+          </div>
               
                  
             
