@@ -12,6 +12,24 @@ body{
     box-shadow: 2px 1px 4px grey;
 }
 
+
+.tabs{
+	
+	margin: 30px 0px;
+}
+
+
+.intro-nav{
+
+	color: black;
+	cursor: pointer;
+}
+
+.glyphicon {
+	    font-size: 1.2em;
+
+}
+
 .btn-danger{
 	margin-top: 10px;
 }
@@ -72,7 +90,7 @@ body{
 	color: #060301;
 	background: linear-gradient(to bottom,#F4E9E7,#DBC796);
 	 box-shadow: 1px 1px 5px grey; 
-	 height: 200px;
+	 height: 18em;
 	}
 	
 	.filter-btns{
