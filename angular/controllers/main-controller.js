@@ -5,10 +5,10 @@ myApp.controller("MainController",["$http","ThroneService","$timeout",function($
 	this.baseUrl ="https://anapioficeandfire.com/api";
 
 	 this.allData=[];
-	 this.noOfElements = 20;
+	 this.noOfElements = 30;
 
 	 this.viewMore = function () {
-    main.noOfElements += 20;  
+    main.noOfElements += 30;  
 	 
 	  };
 
@@ -124,19 +124,6 @@ this.loadChar = function(){        // For loading characters  seperately
 		console.log(response.data);
 
 		main.charData = response.data;
-
-		
-	/*	$timeout(function(){
-
-			if(ThroneService.toCharBtn == "char1"){
-				console.log(ThroneService.toCharBtn);
-				var element = document.getElementById("char1")
-				var scrollDist = element.getBoundingClientRect();
-				console.log(scrollDist.top);
-     		 window.scrollTo(0, scrollDist.top);
-
-			}
-		},0);   */
 		
 	},function errorCallback(reason){
 		alert("Error in GET");
