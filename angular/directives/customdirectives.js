@@ -41,7 +41,6 @@
 		return{
 
 			restrict : "E",
-			replace : true,
 			template : "<span class='move-top fa-stack fa-lg'><i class='fa fa-square-o fa-stack-2x'></i><i class='fa fa-hand-o-up fa-stack-1x fa-inverse'></i></span>",
 			link : function ($scope,element,attrs){
 

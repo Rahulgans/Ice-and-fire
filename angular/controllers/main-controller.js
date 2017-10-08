@@ -55,14 +55,10 @@ myApp.controller("MainController",["$http","ThroneService",function($http,Throne
    this.allHouses = function(){
     
    		for(var i=1;i<12;i++){
-      		ThroneService.housesAllApi([i])
-      		.then(function successCallback(response) {
-         
-          		if(response.data.length>0){
+      		ThroneService.housesAllApi(i)
+      		.then(function successCallback(response) {         
+          		
               	main.allData.push.apply(main.allData,response.data);
-         
-                } 
-
 
         	}, function errorCallback(reason) {
           
@@ -79,13 +75,13 @@ myApp.controller("MainController",["$http","ThroneService",function($http,Throne
     this.allCharacters = function(){
    
   		for(var i=1;i<50;i++){
- 		   ThroneService.charactersAllApi([i])
+ 		   ThroneService.charactersAllApi(i)
   		   .then(function successCallback(response) {
       
-          		if(response.data.length>0){
+          		
               		main.allData.push.apply(main.allData,response.data);
             		//  console.log(main.allData);
-                 }
+                 
                              
           	}, function errorCallback(response) {
               
