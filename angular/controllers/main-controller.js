@@ -196,7 +196,7 @@ myApp.controller("MainController",["$http","ThroneService",function($http,Throne
 
 			if(main.nextKey2 > 1){	
 				main.nextKey2 -= 1;
-		}
+			}
 			
 		ThroneService.characters_houses_Api("houses",main.nextKey2)
 		.then(function successCallback(response){
