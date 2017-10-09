@@ -2,14 +2,13 @@
 .move-top {
 	
 	position: fixed;
-	display: none;
     bottom: 20px;
     right: 20px;
     z-index: 1;
     background-color: black;
 	border-radius: 10px;
     opacity: 0.7;
-    
+    display: none;
 }
 
 .move-top .fa-inverse{
