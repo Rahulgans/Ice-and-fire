@@ -15,13 +15,13 @@ myApp.controller("CharDetailsController",["$http","ThroneService","$routeParams"
 		.then(function successCallback(response){
 
 			main.charData.push(response.data);  
-			this.series =[]; // For more authors
+			this.series =[]; // For more seasons
 		
 
 			for(var i in response.data.tvSeries){
 				this.series.push(response.data.tvSeries[i]);
 				//console.log(main.people);
-				}
+			}
 			main.seasons = this.series.toString(); 
 
 

@@ -9,7 +9,7 @@ myApp.controller("BookDetailsController",["$http","ThroneService","$routeParams"
 	this.bookData = [];
 	this.author;
 
-	this.charactersPov=[];
+	
 	
 	this.booksDetails = function(){
 
@@ -21,11 +21,11 @@ myApp.controller("BookDetailsController",["$http","ThroneService","$routeParams"
 
 
 		this.people =[]; // For more authors
-		this.characters = []; //For POV characters 
+		
 
 			for(var i in response.data.authors){
 				this.people.push(response.data.authors[i]);
-				}
+			}
 
 		main.author = this.people.toString(); 
 

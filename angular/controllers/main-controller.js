@@ -54,11 +54,12 @@ myApp.controller("MainController",["$http","ThroneService",function($http,Throne
   
    this.allHouses = function(){
     
-   		for(var i=1;i<12;i++){
+   		for(var i=1;i<25;i++){
       		ThroneService.housesAllApi(i)
       		.then(function successCallback(response) {         
           		
               	main.allData.push.apply(main.allData,response.data);
+
 
         	}, function errorCallback(reason) {
           
@@ -80,7 +81,7 @@ myApp.controller("MainController",["$http","ThroneService",function($http,Throne
       
           		
               		main.allData.push.apply(main.allData,response.data);
-            		//  console.log(main.allData);
+            		console.log(main.allData);
                  
                              
           	}, function errorCallback(response) {
@@ -131,6 +132,18 @@ myApp.controller("MainController",["$http","ThroneService",function($http,Throne
  	this.charsShowHide = function(){   // For hiding and showing on characters click
 
  		main.value3 =! main.value3;
+
+ 		if(main.value3 == true){    // while coming back to characters after some other card, always dispaly from first page
+
+			ThroneService.characters_houses_Api("characters",1)
+			.then(function successCallback(response){
+		
+			main.houseData = response.data;
+		
+			},function errorCallback(reason){
+				alert("Error in GET");
+			})
+		}
 		main.value1 = false;
 		main.value2 = false;
 		main.value4 = false;
@@ -237,10 +250,25 @@ myApp.controller("MainController",["$http","ThroneService",function($http,Throne
 
 		main.value4 =! main.value4;
 
-	//	console.log(main.value4);
+		
+
+		if(main.value4 == true){      // while coming back to Houses after some other card, always dispaly from first page
+
+			ThroneService.characters_houses_Api("houses",1)
+			.then(function successCallback(response){
+		
+			main.houseData = response.data;
+		
+			},function errorCallback(reason){
+				alert("Error in GET");
+			})
+		}
+
 		main.value1 = false;
 		main.value2 = false;
 		main.value3 = false;
+	//	console.log(main.value4);
+		
 	};
 		
 }]) 

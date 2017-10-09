@@ -5,12 +5,15 @@
 				<div class="row" ng-repeat = "data in houseCtrl.houseData">
 					<div class="col-xs-12 text-center house-jumbo">
 						<div style="color: ghostwhite;">
-							<h3 ng-if ='data.name != ""'>
+							<h4 style="margin: 15px 0px;" ng-if ='data.name != ""'>
 							<span style="margin:0px 5px;"><i class="fa fa-star"></i></span>
 							{{ data.name }} <span style="margin:0px 5px;"><i class="fa fa-star"></i></span>
-							</h3>
+							</h4>
                 			<h4 ng-if='data.region != ""'>Region : <b>{{ data.region }}</b></h4>
+                			<h4 ng-if='data.seats[0] != ""'>Seats : <b>{{ data.seats[0] }}</b></h4>
+                			<h4 ng-if='data.titles[0] != ""'>Titles : <b>{{ houseCtrl.titles }}</b></h4>
                				<h4 ng-if='data.founded != ""'>Founded : <b>{{ data.founded }}</b></h4>
+               				<p ng-if='data.words" !=""''> Words: {{ data.words }}
                 
                 			<h4 ng-if='data.heir != ""'>Heir : <a ng-href='#/characters/{{ data.heir.split("/").pop() }}' style="color: #6aa2d2;">{{ data.heir }}</a>
                 			</h4>
