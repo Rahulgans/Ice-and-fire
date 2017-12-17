@@ -1,5 +1,4 @@
 # Ice-and-fire
-Stats about the world of Game of Thrones
 
 Exploring the world of the famous TV-series, Game Of Thrones :boom: using AngularJS 1x
 
